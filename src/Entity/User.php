@@ -29,7 +29,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  *     collectionOperations={
             "get"={"path"="/admin/users"},
- *          "post"={"path"="/admin/users"},
+ *
  *     },
  *
  *     itemOperations={
@@ -86,6 +86,19 @@ class User implements UserInterface
      * @Assert\NotBlank (message="le nom est obligatoire")
      */
     private $lastName;
+
+
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $archive=false;
+
+    /**
+     * @ORM\Column(type="blob", nullable=true)
+     */
+    private $avatar;
+
 
     public function getId(): ?int
     {
@@ -200,4 +213,29 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
+
+        return $this;
+    }
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
 }

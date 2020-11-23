@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use App\Repository\ProfilRepository;
@@ -14,6 +16,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProfilRepository::class)
+ * @ApiFilter(
+ *     SearchFilter::class,
+ *     properties={"archive":"partial"},
+ * )
  *  @UniqueEntity(
  * fields={"libelle"},
  * message="Le libelle doit être unique"
@@ -26,18 +32,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          "security_message"="Vous n'avez pas access à cette Ressource"
  *     },
  *
- *  collectionOperations={
- *       "get"={"path"="/admin/profils"},
- *     "post"={"path"="/admin/profils"},
- *
- *     },
- *
+ *   routePrefix="/admin",
  *     itemOperations={
- *           "get"={"path"="/admin/profils/{id}"},
- *          "put"={"path"="/admin/profils/{id}"},
- *
- *     },
+            "get", "put", "delete",
+ *     }
  * )
+ *
  */
 class Profil
 {

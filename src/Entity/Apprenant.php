@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ApprenantRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ApprenantRepository::class)
@@ -29,5 +30,39 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Apprenant extends User
 {
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank (message="le numéro de téléphone est obligatoire")
+     */
+    private $telephone;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank (message="l'adresse est obligatoire")
+     */
+    private $adresse;
+
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(string $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
 }
