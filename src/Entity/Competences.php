@@ -13,9 +13,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=CompetencesRepository::class)
  * @ApiResource(
- *   collectionOperations={
-*         "post"={"path"="/admin/grpecomptences"},
- *     },
+ *     normalizationContext={"groups"={"competences:read"}},
+ *  routePrefix="/admin",
+ *     itemOperations={
+            "get","put"
+ *     }
  * )
  */
 class Competences

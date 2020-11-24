@@ -36,7 +36,7 @@ class UserService
 
 
     /**
-     * InscriptionService constructor.
+     * UserService constructor.
      */
     public function __construct( UserPasswordEncoderInterface $encoder,SerializerInterface $serializer, ProfilRepository $profilRepository,ValidatorInterface $validator)
     {
@@ -66,6 +66,9 @@ class UserService
         }else{
             $user = User::class;
         }
+        $idprofil=$this->profilRepository->findOneBy(['libelle'=>$profil])->getId();
+        $userReq["profil"]="api/admin/profils/".$idprofil;
+        //dd($userReq);
         $newUser = $this->serializer->denormalize($userReq, $user);
         $newUser->setProfil($this->profilRepository->findOneBy(['libelle'=>$profil]));
         $newUser->setArchive(true);
@@ -80,9 +83,10 @@ class UserService
      * @param string|null $fileName
      * @return array
      */
-    public function PutUtilisateur(Request $request,string $fileName = null){
+    public function PutUser(Request $request,string $fileName = null){
         $raw =$request->getContent();
-        //dd($raw);
+
+       // dd($raw);
         //dd($request->headers->get("content-type"));
         $delimiteur = "multipart/form-data; boundary=";
         $boundary= "--" . explode($delimiteur,$request->headers->get("content-type"))[1];
@@ -97,15 +101,23 @@ class UserService
             //dd($key);
             if (strchr($key,$fileName)){
                 $stream =fopen('php://memory','r+');
+                //dd($stream);
                 fwrite($stream,$elementsTab[$i +1]);
                 rewind($stream);
                 $data[$fileName] = $stream;
+                //dd($data);
             }else{
-                $val = str_replace(["\r\n", "--"],'',base64_encode($elementsTab[$i+1]));
+                $val=$elementsTab[$i+1];
+                //$val = str_replace(["\r\n", "--"],'',base64_encode($elementsTab[$i+1]));
+                //dd($val);
                 $data[$key] = $val;
+               // dd($data[$key]);
             }
         }
-
+            //dd($data);
+        $prof=$this->profilRepository->findOneBy(['libelle'=>$data["profil"]]);
+        $data["profil"] = $prof;
+        //dd($data);
         return $data;
 
     }

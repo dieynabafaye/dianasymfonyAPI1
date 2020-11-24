@@ -36,7 +36,12 @@ use Symfony\Component\Validator\Constraints as Assert;
             "get_user"={
  *              "method"="GET", "path":"/admin/users/{id}",
  *     },
- *          "put"={"path"="/admin/users/{id}"},
+ *
+ *      "putUserId":{
+ *           "method":"put",
+ *          "path":"/admin/users/{id}",
+ *              "deserialize"= false,
+ *          },
  *     },
  *    )
  */
@@ -53,6 +58,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Assert\NotBlank (message="l'email est obligatoire")
+     * @Assert\Email(message="l'email '{{value}}' doit être valide")
      * @Groups ({"users:read"})
      */
     private $email;

@@ -2,21 +2,34 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GroupeCompetencesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=GroupeCompetencesRepository::class)
+ *  @ApiFilter(
+ *     SearchFilter::class,
+ *     properties={"archive":"partial"},
+ * )
+ * @UniqueEntity(
+ * fields={"libelle"},
+ * message="Le libelle doit être unique"
+ * )
+ *
  * @ApiResource(
  *     normalizationContext={"groups"={"grpComptence:read"}},
  *
  *     collectionOperations={
             "get"={"path"="/admin/grpecomptences"},
+ *          "post"={"path"="/admin/grpecomptences"},
  *          "get_competences"={
  *              "method"="GET",
  *              "path"="/admin/grpecomptences/comptences",
@@ -62,6 +75,13 @@ class GroupeCompetences
      * @Groups ({"grpComptence:read"})
      */
     private $Competences;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $archive=false;
+
+
 
     public function __construct()
     {
@@ -120,4 +140,17 @@ class GroupeCompetences
 
         return $this;
     }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
+
+        return $this;
+    }
+
 }

@@ -20,14 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187240b4-2df6-4b1a-8cff-d233a8f3f5fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/GroupeCompetencesFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataPersister/ProfilDataPersister.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Apprenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Apprenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201119110150.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201119110416.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201119123356.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201119123556.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201120120525.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201120120608.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201123123359.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201123123559.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Competences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Competences.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/GroupeCompetences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GroupeCompetences.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Profil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +179,8 @@
       <workItem from="1605875778781" duration="4178000" />
       <workItem from="1605964209759" duration="212000" />
       <workItem from="1606120344831" duration="783000" />
-      <workItem from="1606123823308" duration="4160000" />
+      <workItem from="1606123823308" duration="29125000" />
+      <workItem from="1606218225862" duration="7651000" />
     </task>
     <servers />
   </component>
@@ -192,10 +200,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser" timestamp="1605605146315">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="716" y="63" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1606145452709">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="446" y="23" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1605605146315" />
+    <state x="716" y="63" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1606145452709" />
     <state x="321" y="77" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1605601514307">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
