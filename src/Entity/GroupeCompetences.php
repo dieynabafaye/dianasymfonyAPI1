@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GroupeCompetencesRepository;
@@ -29,12 +30,16 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  *     collectionOperations={
             "get"={"path"="/admin/grpecomptences"},
- *          "post"={"path"="/admin/grpecomptences"},
  *          "get_competences"={
  *              "method"="GET",
  *              "path"="/admin/grpecomptences/comptences",
  *              "normalization_context"={"groups"={"comptences:read"}},
  *          },
+ *          "postgrpecompetences"={
+*                   "method"="POST",
+ *                  "path"="/admin/grpecomptences",
+ *                  "route_name"="postgroupecompetences",
+ *     },
  *
  *     },
  *
@@ -42,11 +47,17 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          "get"={"path"="/admin/grpecomptences/{id}"},
  *           "get_competences_id"={
  *              "method"="GET",
- *              "path"="/admin/grpecomptences/{id}/comptences",
  *              "normalization_context"={"groups"={"comptences:read"}},
+ *     },
+ *              "putUserId"={
+ *                  "method"="PUT",
+ *                  "path"="/admin/grpecomptences/{id}",
+ *                  "route_name"="put_competences"
+ *              },
+ *
+ *
  *          },
- *          "put"={"path"="/admin/grpecomptences/{id}"},
- *     }
+ *
  * )
  */
 class GroupeCompetences
@@ -73,6 +84,9 @@ class GroupeCompetences
     /**
      * @ORM\ManyToMany(targetEntity=Competences::class, inversedBy="groupeCompetences")
      * @Groups ({"grpComptence:read"})
+     * @ApiSubresource (
+     *
+     * )
      */
     private $Competences;
 

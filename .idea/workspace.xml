@@ -20,21 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187240b4-2df6-4b1a-8cff-d233a8f3f5fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201119110150.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201119110416.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201119123356.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201119123556.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201120120525.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201120120608.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201123123359.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201123123559.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201124150444.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GroupeCompetencesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GroupeCompetencesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/GroupeCompetencesFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/GroupeCompetencesFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Competences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Competences.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/GroupeCompetences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GroupeCompetences.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/GroupeCompetencesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GroupeCompetencesRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +141,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -158,6 +153,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -180,7 +176,12 @@
       <workItem from="1605964209759" duration="212000" />
       <workItem from="1606120344831" duration="783000" />
       <workItem from="1606123823308" duration="29125000" />
-      <workItem from="1606218225862" duration="7651000" />
+      <workItem from="1606218225862" duration="33914000" />
+      <workItem from="1606378923480" duration="2769000" />
+      <workItem from="1606388001400" duration="8249000" />
+      <workItem from="1606469653392" duration="9260000" />
+      <workItem from="1606479294574" duration="3019000" />
+      <workItem from="1606559791760" duration="884000" />
     </task>
     <servers />
   </component>
@@ -200,6 +201,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606480776027">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606480776027" />
     <state x="716" y="63" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1606145452709">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -217,10 +222,18 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605778233567" />
+    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1606480431171">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state width="263" height="500" key="HiddenNamespacesPopup/72.27.1848.1053@72.27.1848.1053" timestamp="1606480431171" />
     <state x="779" y="256" width="423" height="602" key="RollbackChangesDialog" timestamp="1605711411217">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="256" width="423" height="602" key="RollbackChangesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605711411217" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1606390133035">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1606390133035" />
     <state x="501" y="261" key="run.anything.popup" timestamp="1605705675129">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

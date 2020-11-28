@@ -40,7 +40,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      "putUserId":{
  *           "method":"put",
  *          "path":"/admin/users/{id}",
- *              "deserialize"= false,
+ *
  *          },
  *     },
  *    )
