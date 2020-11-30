@@ -4,9 +4,16 @@ namespace App\Entity;
 
 use App\Repository\NiveauRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NiveauRepository::class)
+ * @UniqueEntity(
+ * fields={"libelle"},
+ * message="Le libelle doit être unique"
+ * )
  */
 class Niveau
 {
@@ -19,16 +26,22 @@ class Niveau
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank (message="le libelle est obligatoire")
+     * @Groups ({ "competences:write", "compt:read"})
      */
     private $libelle;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank (message="le critère d'evaluation est obligatoire")
+     * @Groups ({"competences:write", "compt:read"})
      */
     private $critereEvaluation;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank (message="le groupe d'action est obligatoire")
+     * @Groups ({"compt:read", "competences:write"})
      */
     private $groupeAction;
 

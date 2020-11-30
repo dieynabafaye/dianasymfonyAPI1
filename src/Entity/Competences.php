@@ -18,13 +18,18 @@ use Symfony\Component\Validator\Constraints as Assert;
  * message="Le libelle doit être unique"
  * )
  * @ApiResource(
- *     normalizationContext={"groups"={"competences:read"}},
- *  routePrefix="/admin",
- *     collectionOperations={
- *          "post"={"path"="/comptences"}, "get",
+ *     denormalizationContext={"groups"={"competences:write"}},
+ *     attributes={
+*           "normalization_context"={"groups"={"compt:read"}},
  *     },
+ *  routePrefix="/admin",
  *     itemOperations={
-            "get","put"
+            "get",
+ *          "put_competences"={
+ *              "path"="/admin/competences/{id}",
+ *              "method"="PUT",
+ *              "route_name"="put_competences"
+ *     },
  *     }
  * )
  */
@@ -40,19 +45,32 @@ class Competences
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank (message="le libelle est obligatoire")
-     * @Groups ({"comptences:read", "grpComptence:read"})
+     * @Groups ({"compt:read", "grpComptence:read","competences:write"})
      */
     private $libelle;
 
     /**
      * @ORM\ManyToMany(targetEntity=GroupeCompetences::class, mappedBy="Competences")
+     * @Groups ({"competences:write"})
      */
     private $groupeCompetences;
 
     /**
      * @ORM\OneToMany(targetEntity=Niveau::class, mappedBy="competences", cascade={"persist"})
+     * @Groups ({"competences:write", "compt:read"})
+     *  @Assert\Count(
+     *      min = 3,
+     *      max = 3,
+     *      minMessage = "You must specify at least three niveau",
+     *      maxMessage = "You cannot specify more than {{ limit }} niveau"
+     * )
      */
     private $niveau;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $archive=false;
 
     public function __construct()
     {
@@ -130,6 +148,18 @@ class Competences
                 $niveau->setCompetences(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
 
         return $this;
     }

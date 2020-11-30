@@ -52,7 +52,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *              "putUserId"={
  *                  "method"="PUT",
  *                  "path"="/admin/grpecomptences/{id}",
- *                  "route_name"="put_competences"
+ *                  "route_name"="put_grpcompetences"
  *              },
  *
  *
@@ -66,6 +66,7 @@ class GroupeCompetences
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups ({"competences:write"})
      */
     private $id;
 
@@ -84,9 +85,7 @@ class GroupeCompetences
     /**
      * @ORM\ManyToMany(targetEntity=Competences::class, inversedBy="groupeCompetences")
      * @Groups ({"grpComptence:read"})
-     * @ApiSubresource (
      *
-     * )
      */
     private $Competences;
 

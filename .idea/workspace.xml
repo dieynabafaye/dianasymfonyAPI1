@@ -20,15 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187240b4-2df6-4b1a-8cff-d233a8f3f5fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DataPersister/CompetencesDataPersister.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CompetencesService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ErrorService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201124150444.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201127125412.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GroupeCompetencesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GroupeCompetencesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/GroupeCompetencesFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/GroupeCompetencesFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Competences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Competences.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/GroupeCompetences.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GroupeCompetences.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/GroupeCompetencesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GroupeCompetencesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Niveau.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Niveau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,7 @@
       <workItem from="1606388001400" duration="8249000" />
       <workItem from="1606469653392" duration="9260000" />
       <workItem from="1606479294574" duration="3019000" />
-      <workItem from="1606559791760" duration="884000" />
+      <workItem from="1606559791760" duration="34098000" />
     </task>
     <servers />
   </component>

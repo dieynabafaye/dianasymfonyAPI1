@@ -19,7 +19,7 @@ class GroupeCompetencesController extends AbstractController
 {
     /**
      * @Route(
-     *     name="put_competences",
+     *     name="put_grpcompetences",
      *     path="/api/admin/grpecompetences/{id}",
      *     methods={"PUT"},
      *     defaults={

@@ -127,7 +127,9 @@ class UserService
     {
         $errorString ='';
         $error = $this->validator->validate($utilisateur);
-        if(isset($error) && $error >0){ $errorString = $this->serializer->serialize($error,'json');}
+        if(isset($error) && $error >0){
+            $errorString = $this->serializer->serialize($error,'json');
+        }
         return $errorString;
     }
 
